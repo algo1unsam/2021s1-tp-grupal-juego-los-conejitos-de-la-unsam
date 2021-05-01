@@ -15,4 +15,10 @@ program rabbitGame{
 	game.showAttributes(rabbit) //Debug
 
 	game.start()
+<<<<<<< HEAD
 }
+=======
+	
+	//prueba de commit
+}
+>>>>>>> branch 'master' of https://github.com/algo1unsam/2021s1-tp-grupal-juego-los-conejitos-de-la-unsam.git
