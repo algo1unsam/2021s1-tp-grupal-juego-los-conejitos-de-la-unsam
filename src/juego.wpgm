@@ -1,8 +1,18 @@
 import wollok.game.*
-import pepita.*
+import rabbit.*
+import config.*
 
-program juego {
-	game.title("Juego Base")
-	game.addVisual(pepita)
+program rabbitGame{
+	game.title("Rabbit Wollok Game")
+	game.height(18)
+	game.width(18)
+	game.boardGround("assets/tablero.png")
+	//game.addVisualCharacter(rabbit)
+	game.addVisual(rabbit)
+	config.configurarTeclas()
+
+
+	game.showAttributes(rabbit) //Debug
+
 	game.start()
 }
