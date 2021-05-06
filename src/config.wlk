@@ -4,19 +4,16 @@ import rabbit.*
 object config {
 
 	method configurarTeclas() {
-		keyboard.left().onPressDo({ rabbit.irA(rabbit.position().left(2))})
-		keyboard.right().onPressDo({ rabbit.irA(rabbit.position().right(2))})
-		keyboard.up().onPressDo({ rabbit.irA(rabbit.position().up(2))})
-		keyboard.down().onPressDo({ rabbit.irA(rabbit.position().down(2))})
-		keyboard.h().onPressDo({rabbit.saluda()})
-		keyboard.m().onPressDo({rabbit.limiteTablero()})
+		keyboard.left().onPressDo({ rabbit.limiteLeft() })
+		keyboard.right().onPressDo({ rabbit.limiteRight() })
+		keyboard.up().onPressDo({ rabbit.limiteUp() })
+		keyboard.down().onPressDo({ rabbit.limiteDown() })
+		keyboard.h().onPressDo({ rabbit.saluda()})
+		
 	}
-	
-
 
 //	method configurarColisiones() {
 //		game.onCollideDo(pepita, { algo => algo.teEncontro(pepita)})
 //	}
 }
-
 

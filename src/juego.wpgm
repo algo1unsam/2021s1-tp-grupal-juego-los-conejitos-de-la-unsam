@@ -1,24 +1,9 @@
 import wollok.game.*
-import rabbit.*
-import config.*
+import visual.*
 
 program rabbitGame{
-	game.title("Rabbit Wollok Game")
-	game.height(18)
-	game.width(18)
-	game.boardGround("assets/tablero.png")
-	//game.addVisualCharacter(rabbit)
-	game.addVisual(rabbit)
-	config.configurarTeclas()
-
-
-	game.showAttributes(rabbit) //Debug
+	
+	tablero.inicio()
 
 	game.start()
-<<<<<<< HEAD
 }
-=======
-	
-	//prueba de commit
-}
->>>>>>> branch 'master' of https://github.com/algo1unsam/2021s1-tp-grupal-juego-los-conejitos-de-la-unsam.git

@@ -1,14 +1,13 @@
 import wollok.game.*
 import config.*
+import visual.*
 
 object rabbit {
+
 	var property energia = 100
-	var property position = game.origin()
+	var property position = new Position(x = 7, y = 0)
 
-	method image() {
-		return "assets/rabbit2.png"
-	}
-
+	method image() = "assets/rabbit2.png"
 
 	method mueve(espacios) {
 		energia = energia - espacios * 3
@@ -17,34 +16,51 @@ object rabbit {
 	method irA(nuevaPosicion) {
 		self.mueve(position.distance(nuevaPosicion))
 		position = nuevaPosicion
-	
 	}
 
 	method estaCansado() {
 		return energia <= 0
 	}
-	
+
 	method saluda() {
 		game.say(self, "Hola Peque!!!")
+	}
 
+	method limiteLeft() {
+		if (self.position().x() >= 4) {
+			self.irA(self.position().left(1))
+		} else self.noPuedo()
 	}
-	
-//self.position().y().max(9))
-	method limiteTablero() {
-		const ancho = game.width() - 2 // debemos restarles uno para 
-	   	const alto = game.height() - 2 // que las posiciones se generen bien.
-		if (self.position().x()<0 || self.position().x()>ancho)
-			{return game.say(self, "Chau X!!!")}
-		else {return game.say(self, "Hola Peque!!!")}
-		if (self.position().y()<0 || self.position().y()> alto)
-			{return game.say(self, "Hola Peque Y!!!")}
-		else {return game.say(self,"Chau Y!!!")}
+
+	method limiteRight() {
+		if (self.position().x() <= game.width() - 5) {
+			self.irA(self.position().right(1))
+		} else self.noPuedo()
 	}
-	
-	
-//	method llego() {
-//		return position == nido.position() // ESTÁ EN EXTRAS
-//	}
+
+	method limiteDown() {
+		if (self.position().y() >= 1) {
+			self.irA(self.position().down(1))
+		} else self.noPuedo()
+	}
+
+	method limiteUp() {
+		if (self.position().y() < game.height() - 1) {
+			self.irA(self.position().up(1))
+		}
+		self.llego()
+	}
+
+	method noPuedo() = game.say(self, "No puedo, se terminó el tablero!")
+
+	method llego() {
+		if (self.position().y() == game.height() - 1) {
+			game.schedule(3000, { => rabbitWin.ganar()})
+			
+		}
+	}
+
 }
+
 
 
