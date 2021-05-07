@@ -11,7 +11,7 @@ object config {
 		keyboard.h().onPressDo({ rabbit.saluda()})
 		
 	}
-
+//prueba
 //	method configurarColisiones() {
 //		game.onCollideDo(pepita, { algo => algo.teEncontro(pepita)})
 //	}
