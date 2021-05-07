@@ -94,7 +94,8 @@ object rabbitWin {
 	method ganar() {
 		game.clear()
 		game.addVisual(self)
+		//game.schedule(1000, { => tablero.inicio()}) //VA AL INICIO DEL JUEGO
+		game.schedule(1000, { => start.inicio()}) //VA AL INICIO DEL TABLERO EN ULTIMA POSICION 
 	}
 
 }
-
