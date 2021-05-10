@@ -2,12 +2,21 @@ import wollok.game.*
 import config.*
 import visual.*
 
+
 object rabbit {
 
 	var property energia = 100
+	var property vidas = 3// agrego vidas
 	var property position = new Position(x = 7, y = 0)
 
 	method image() = "assets/rabbit2.png"
+	
+	method perderVidas(choque){
+		vidas= (vidas - choque).max(0)
+		if (vidas==0){
+			self.finJuegoPor(choque)
+		}
+	}//agrego metodo para que pierda vidas
 
 	method mueve(espacios) {
 		energia = energia - espacios * 3
@@ -59,6 +68,10 @@ object rabbit {
 			
 		}
 	}
+	
+	method finJuegoPor(motivo){
+		game.schedule(3500,{game.stop()})
+	}// agrego metodo para terminar el juego
 
 }
 

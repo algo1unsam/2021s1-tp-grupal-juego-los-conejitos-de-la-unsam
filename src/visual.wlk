@@ -99,3 +99,11 @@ object rabbitWin {
 	}
 
 }
+
+
+object barraVidas{
+	
+	method image() = "vidas-" + rabbit.vidas() + ".png"
+	//method position() = 
+	
+}
