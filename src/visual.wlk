@@ -82,6 +82,7 @@ object start {
 		game.addVisual(rabbit)
 		config.configurarTeclas()
 		game.showAttributes(rabbit) // Debug	
+		game.addVisual(barraVidas)
 	}
 
 }
@@ -103,7 +104,10 @@ object rabbitWin {
 
 object barraVidas{
 	
-	method image() = "vidas-" + rabbit.vidas() + ".png"
-	//method position() = 
+	//method image() = /*"vidas-"  + rabbit.vidas() + */ "assets/zanahoria1.png"
+	//method image() = /*"vidas-"  + rabbit.vidas() + */ "assets/zanahoria80.png"
+	method image() = /*"vidas-"  + rabbit.vidas() + */ "assets/zanahoria50.png"
+
+	method position() = game.origin()
 	
 }
