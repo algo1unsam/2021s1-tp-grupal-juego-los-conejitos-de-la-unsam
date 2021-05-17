@@ -1,6 +1,7 @@
 import wollok.game.*
 import rabbit.*
 import config.*
+import transito.*
 
 class Arbol {
 
@@ -22,8 +23,8 @@ object tablero {
 
 	method inicio() {
 		game.title("Rabbit Wollok Game")
-		game.height(9)
-		game.width(15)
+		game.height(9)//alto
+		game.width(15)//ancho
 		game.boardGround("assets/tableroSA.png")
 		game.addVisual(intro)
 		game.schedule(3000, { => game.addVisual(titulo)})
@@ -83,6 +84,7 @@ object start {
 		config.configurarTeclas()
 		game.showAttributes(rabbit) // Debug	
 		game.addVisual(barraVidas)
+		game.addVisual(camion)
 	}
 
 }
@@ -104,10 +106,13 @@ object rabbitWin {
 
 object barraVidas{
 	
-	//method image() = /*"vidas-"  + rabbit.vidas() + */ "assets/zanahoria1.png"
-	//method image() = /*"vidas-"  + rabbit.vidas() + */ "assets/zanahoria80.png"
-	method image() = /*"vidas-"  + rabbit.vidas() + */ "assets/zanahoria50.png"
+	
+	method image() = "assets/vidas-"  + rabbit.vidas() + ".png"
 
-	method position() = game.origin()
+	method position() = game.at(0,5)
 	
 }
+
+
+
+
