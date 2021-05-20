@@ -8,6 +8,41 @@ class Arbol {
 	var property image = "assets/arbol.png"
 	var property position
 
+
+}
+
+class Auto{
+	const posicionInicial = game.at(10,2)
+	var property image ="assets/auto1L.png"
+	var property position = posicionInicial
+	var property velocidad = 200  // menor es este valor mas rapido va
+	
+	method posicionIzquierda(){
+		return position.left(1)
+
+	}
+	
+	method arrancarAuto(){
+		
+	game.onTick(velocidad,"mover auto",{self.moverIzquierda()})
+	
+	
+	}
+	
+	method moverIzquierda(){
+		if (self.estaAlBorde()){
+			position = posicionInicial
+			}
+			else{
+				position = self.posicionIzquierda()
+			}
+		
+	}	
+	
+	method estaAlBorde(){
+		return self.posicionIzquierda().x() < 2 
+		
+	}
 }
 
 class Bache {
@@ -44,7 +79,7 @@ const bache2 = new Bache()
 const bache3 = new Bache()
 const bache4 = new Bache()
 
-
+const auto1 = new Auto()
 
 object intro {
 
@@ -85,6 +120,14 @@ object start {
 		game.showAttributes(rabbit) // Debug	
 		game.addVisual(barraVidas)
 		game.addVisual(camion)
+		
+		
+		game.addVisual(auto1)
+		
+		auto1.arrancarAuto()
+		
+		
+
 	}
 
 }
@@ -100,7 +143,6 @@ object rabbitWin {
 		//game.schedule(1000, { => tablero.inicio()}) //VA AL INICIO DEL JUEGO
 		game.schedule(1000, { => start.inicio()}) //VA AL INICIO DEL TABLERO EN ULTIMA POSICION 
 	}
-
 }
 
 
