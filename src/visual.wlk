@@ -12,10 +12,10 @@ class Arbol {
 }
 
 class Auto{
-	const posicionInicial = game.at(10,2)
+	const posicionInicial = game.at(10,2) // paso eje x e y 
 	var property image ="assets/auto1L.png"
 	var property position = posicionInicial
-	var property velocidad = 200  // menor es este valor mas rapido va
+	var property velocidad = 200  // menor es este valor mas rapido
 	
 	method posicionIzquierda(){
 		return position.left(1)
