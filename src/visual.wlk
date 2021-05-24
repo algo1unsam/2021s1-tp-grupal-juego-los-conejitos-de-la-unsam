@@ -19,6 +19,9 @@ class Bache {
 	var property image = "assets/bache.png"
 	var property position = new Position( x = posX.anyOne(), y = posY.anyOne())
 	
+	
+	
+	
 }
 
 
@@ -34,12 +37,12 @@ object tablero {
 		game.width(15)//ancho
 		game.boardGround("assets/tableroSA.png")
 		game.addVisual(intro)
-		game.schedule(1000, { => game.addVisual(titulo)})
-		game.schedule(1000, { => game.addVisual(logo)})  // esta generando problemas
+		game.schedule(500, { => game.addVisual(titulo)})
+		game.schedule(500, { => game.addVisual(logo)})  // esta generando problemas por el tamaño segun wollok
 		
 		
 		
-		game.schedule(1000, { => game.say(logo, "Presionar 'Enter' para comenzar")})
+		game.schedule(500, { => game.say(logo, "Presionar 'Enter' para comenzar")})// por el error de arriba esto no se muestra
 		keyboard.enter().onPressDo({ start.inicio()})
 		
 		
@@ -76,7 +79,7 @@ object titulo {
 object logo {
 
 	var property image = "assets/logo.png"
-	var property position = new Position(x = 5, y = 2)
+	var property position = new Position(x = 4, y = 4)
 
 }
 
@@ -98,6 +101,8 @@ object start {
 		game.showAttributes(rabbit) // Debug	
 		game.addVisual(barraVidas)
 		
+		
+
 		
 		game.addVisual(auto1)
 		auto1.arrancarIzquierdaDerecha()

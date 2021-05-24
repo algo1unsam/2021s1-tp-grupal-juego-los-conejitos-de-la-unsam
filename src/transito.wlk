@@ -2,7 +2,7 @@ import wollok.game.*
 import rabbit.*
 import visual.*
 // si el auto hace derecha-izquierda tiene que empezar con x=12 de posicion inicial
-//si el auto hace izquierda-derecha tienq que empezar con x= de posicion inicial
+//si el auto hace izquierda-derecha tienq que empezar con x=2 de posicion inicial
 
 class Auto{
 	var property posicionInicial = new Position( x=0, y=0) //  eje y decide carril
@@ -11,7 +11,7 @@ class Auto{
 	var property velocidad = 200  // menor es este valor mas rapido
 	
 	
-	method imagen(unaImagen){ // tengo que pasarle una direccion
+	method imagen(unaImagen){ // tengo que pasarle una direccion de archivo
 		image = unaImagen
 		
 	}
@@ -69,6 +69,9 @@ class Auto{
 		return self.posicionDerecha().x() > 11
 		
 	}
+	
+	
+	
 }	
 	
 	

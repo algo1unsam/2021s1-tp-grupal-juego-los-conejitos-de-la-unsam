@@ -23,6 +23,8 @@ object rabbit {
 	method estaCansado() {
 		return energia <= 0
 	}
+	
+	
 
 	method saluda() {
 		game.say(self, "Hola Peque!!!")
@@ -57,7 +59,7 @@ object rabbit {
 
 	method llego() {
 		if (self.position().y() == game.height() - 1) {
-			game.schedule(3000, { => rabbitWin.ganar()})
+			game.schedule(50, { => rabbitWin.ganar()})
 			
 		}
 	}
@@ -69,7 +71,7 @@ object rabbit {
 		}
 	}
 	method finJuegoPor(motivo){
-		game.schedule(3500,{game.stop()})
+		game.schedule(2000,{game.stop()})
 	}
 
 }
