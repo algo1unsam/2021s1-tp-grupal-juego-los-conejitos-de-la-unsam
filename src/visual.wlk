@@ -2,6 +2,7 @@ import wollok.game.*
 import rabbit.*
 import config.*
 import transito.*
+import sonidos.*
 
 class Arbol {
 
@@ -11,61 +12,37 @@ class Arbol {
 
 }
 
-class Auto{
-	const posicionInicial = game.at(10,2) // paso eje x e y 
-	var property image ="assets/auto1L.png"
-	var property position = posicionInicial
-	var property velocidad = 200  // menor es este valor mas rapido
-	
-	method posicionIzquierda(){
-		return position.left(1)
-
-	}
-	
-	method arrancarAuto(){
-		
-	game.onTick(velocidad,"mover auto",{self.moverIzquierda()})
-	
-	
-	}
-	
-	method moverIzquierda(){
-		if (self.estaAlBorde()){
-			position = posicionInicial
-			}
-			else{
-				position = self.posicionIzquierda()
-			}
-		
-	}	
-	
-	method estaAlBorde(){
-		return self.posicionIzquierda().x() < 2 
-		
-	}
-}
-
 class Bache {
 	const posX = [3, 4, 5, 6, 7, 8, 9, 10,11]
 	const posY = [1,2,3,5,6,7]
 	
 	var property image = "assets/bache.png"
 	var property position = new Position( x = posX.anyOne(), y = posY.anyOne())
-
+	
 }
+
+
 
 object tablero {
 
 	method inicio() {
+		
+		
+		
 		game.title("Rabbit Wollok Game")
 		game.height(9)//alto
 		game.width(15)//ancho
 		game.boardGround("assets/tableroSA.png")
 		game.addVisual(intro)
-		game.schedule(3000, { => game.addVisual(titulo)})
-		game.schedule(4000, { => game.addVisual(logo)})
-		game.schedule(4500, { => game.say(logo, "Presionar 'Enter' para comenzar")})
+		game.schedule(1000, { => game.addVisual(titulo)})
+		game.schedule(1000, { => game.addVisual(logo)})  // esta generando problemas
+		
+		
+		
+		game.schedule(1000, { => game.say(logo, "Presionar 'Enter' para comenzar")})
 		keyboard.enter().onPressDo({ start.inicio()})
+		
+		
 	}
 
 }
@@ -79,7 +56,8 @@ const bache2 = new Bache()
 const bache3 = new Bache()
 const bache4 = new Bache()
 
-const auto1 = new Auto()
+const auto1= new Auto(image="assets/auto1R.png",posicionInicial= new Position(x= 2 ,y=5))
+
 
 object intro {
 
@@ -98,7 +76,7 @@ object titulo {
 object logo {
 
 	var property image = "assets/logo.png"
-	var property position = new Position(x = 6, y = 1)
+	var property position = new Position(x = 5, y = 2)
 
 }
 
@@ -119,12 +97,15 @@ object start {
 		config.configurarTeclas()
 		game.showAttributes(rabbit) // Debug	
 		game.addVisual(barraVidas)
-		game.addVisual(camion)
 		
 		
 		game.addVisual(auto1)
+		auto1.arrancarIzquierdaDerecha()
+		game.showAttributes(auto1)
 		
-		auto1.arrancarAuto()
+		
+		
+	
 		
 		
 

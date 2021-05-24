@@ -7,7 +7,7 @@ object rabbit {
 
 	var property energia = 100
 	var property vidas = 3
-	var property position = new Position(x = 7, y = 0)
+	var property position = new Position(x = 7, y = 0) 
 
 	method image() = "assets/rabbit2.png"
 
