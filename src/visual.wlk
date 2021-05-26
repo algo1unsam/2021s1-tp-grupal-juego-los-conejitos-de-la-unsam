@@ -8,6 +8,11 @@ class Arbol {
 
 	var property image = "assets/arbol.png"
 	var property position
+	
+	
+	method chocar(){
+		
+	}
 
 
 }
@@ -21,7 +26,9 @@ class Bache {
 	
 	
 	
-	
+	method chocar(){
+		
+	}
 }
 
 
@@ -59,7 +66,7 @@ const bache2 = new Bache()
 const bache3 = new Bache()
 const bache4 = new Bache()
 
-const auto1= new Auto(image="assets/auto1R.png",posicionInicial= new Position(x= 2 ,y=5))
+const auto1= new Auto(image="assets/camion4R.png",posicionInicial= new Position(x= 3 ,y=5))
 
 
 object intro {
@@ -101,9 +108,15 @@ object start {
 		game.showAttributes(rabbit) // Debug	
 		game.addVisual(barraVidas)
 		
+		//colisiones
+		game.whenCollideDo(bache1,{elemento => elemento.chocar()})
+		game.whenCollideDo(bache2,{elemento => elemento.chocar()})
+		game.whenCollideDo(bache3,{elemento => elemento.chocar()})
+		game.whenCollideDo(bache4,{elemento => elemento.chocar()})
 		
-		//game.whenCollideDo(auto1,{elemento => elemento.chocar()})
 		
+		
+		//puesta en marcha del auto
 		game.addVisual(auto1)
 		auto1.arrancarIzquierdaDerecha()
 		game.showAttributes(auto1)

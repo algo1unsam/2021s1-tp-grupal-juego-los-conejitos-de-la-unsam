@@ -6,7 +6,7 @@ import visual.*
 
 // auto no puede ir en y=4 y=0 y=9 porque es el cantero
 class Auto{
-	var property posicionInicial = new Position( x=2, y=4) //  eje y decide carril
+	var property posicionInicial = new Position( x=3, y=4) //  eje y decide carril
 	var property image 
 	var property position = posicionInicial
 	var property velocidad = 200  // menor es este valor mas rapido
@@ -63,7 +63,9 @@ class Auto{
 		
 	}
 	
-	
+	method chocar(){
+		
+	}
 	
 	
 	

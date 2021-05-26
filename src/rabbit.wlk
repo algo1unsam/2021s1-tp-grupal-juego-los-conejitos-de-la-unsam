@@ -76,7 +76,7 @@ object rabbit {
 	
 	
 	method chocar(){
-		position= position.down(1)
+		position= new Position(x = 7, y = 0) 
 	}
 
 }
