@@ -73,6 +73,11 @@ object rabbit {
 	method finJuegoPor(motivo){
 		game.schedule(2000,{game.stop()})
 	}
+	
+	
+	method chocar(){
+		position= position.down(1)
+	}
 
 }
 

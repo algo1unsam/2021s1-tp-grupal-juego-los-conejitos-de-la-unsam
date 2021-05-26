@@ -4,8 +4,9 @@ import visual.*
 // si el auto hace derecha-izquierda tiene que empezar con x=12 de posicion inicial
 //si el auto hace izquierda-derecha tienq que empezar con x=2 de posicion inicial
 
+// auto no puede ir en y=4 y=0 y=9 porque es el cantero
 class Auto{
-	var property posicionInicial = new Position( x=0, y=0) //  eje y decide carril
+	var property posicionInicial = new Position( x=2, y=4) //  eje y decide carril
 	var property image 
 	var property position = posicionInicial
 	var property velocidad = 200  // menor es este valor mas rapido
@@ -16,10 +17,6 @@ class Auto{
 		
 	}
 	
-	method posicionIzquierda(){
-		return position.left(1)
-
-	}
 	
 	method arrancarDerechaIzquierda(){
 		
@@ -40,35 +37,33 @@ class Auto{
 			position = posicionInicial
 			}
 			else{
-				position = self.posicionIzquierda()
+				position = position.left(1)
 			}
 		
 	}	
-	
-	method posicionDerecha(){
-		return position.right(1)
 
-	}
 	
 		method moverDerecha(){
 		if (self.estaAlBordeDerecho()){
 			position = posicionInicial
 			}
 			else{
-				position = self.posicionDerecha()
+				position = position.right(1)
 			}
 		
 	}
 	
 	method estaAlBordeIzquierdo(){
-		return self.posicionIzquierda().x() < 2
+		return position.x() < 2
 		
 	}
 	
 	method estaAlBordeDerecho(){
-		return self.posicionDerecha().x() > 11
+		return position.x() > 11
 		
 	}
+	
+	
 	
 	
 	

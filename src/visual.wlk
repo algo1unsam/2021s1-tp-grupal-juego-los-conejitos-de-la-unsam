@@ -102,7 +102,7 @@ object start {
 		game.addVisual(barraVidas)
 		
 		
-
+		//game.whenCollideDo(auto1,{elemento => elemento.chocar()})
 		
 		game.addVisual(auto1)
 		auto1.arrancarIzquierdaDerecha()
