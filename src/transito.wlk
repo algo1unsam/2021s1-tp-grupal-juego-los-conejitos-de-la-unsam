@@ -1,10 +1,28 @@
 import wollok.game.*
 import rabbit.*
 import visual.*
+
+
+//aca se van a ir agregando los autos que van a ir por la carretera
+class Carretera{
+	
+	var property autosTrafico = []
+	
+	
+	method agregarAuto(unAuto){
+		autosTrafico.add(unAuto)
+	}
+	
+	
+}
+
 // si el auto hace derecha-izquierda tiene que empezar con x=12 de posicion inicial
 //si el auto hace izquierda-derecha tienq que empezar con x=2 de posicion inicial
 
 // auto no puede ir en y=4 y=0 y=9 porque es el cantero
+
+
+//problemas al pasarle una posicion inicial nueva al auto
 class Auto{
 	var property posicionInicial = new Position( x=3, y=5) //  eje y decide carril
 	var property image 
@@ -72,6 +90,8 @@ class Auto{
 	
 }	
 
+
+//aca voy a crear dos clases disintas dependiendo si el auto va de izquierda-derecha o viceverza
 class AutoIzquierdaDerecha inherits Auto{
 	
 	

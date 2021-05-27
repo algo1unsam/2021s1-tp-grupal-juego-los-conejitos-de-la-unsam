@@ -121,6 +121,8 @@ object start {
 		//game.onCollideDo(auto1,{elemento => elemento.chocar() })
 		
 		
+		//no estaria funcionando bien (no entiendo bien la diferencia entre los dos collideDo)
+		
 		
 		
 		

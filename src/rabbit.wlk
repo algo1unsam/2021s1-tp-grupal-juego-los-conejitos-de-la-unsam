@@ -77,7 +77,6 @@ object rabbit {
 	
 	method chocar(){
 		position= new Position(x = 7, y = 0) 
-		 
 		 barraVidas.perderVida()
 	}
 
