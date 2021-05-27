@@ -66,7 +66,7 @@ const bache2 = new Bache()
 const bache3 = new Bache()
 const bache4 = new Bache()
 
-const auto1= new Auto(image="assets/camion4R.png",posicionInicial= new Position(x= 3 ,y=5))
+const auto1= new Auto(image="assets/camion4R.png")
 
 
 object intro {
@@ -108,11 +108,19 @@ object start {
 		game.showAttributes(rabbit) // Debug	
 		game.addVisual(barraVidas)
 		
-		//colisiones
+		//colisiones baches
 		game.whenCollideDo(bache1,{elemento => elemento.chocar()})
 		game.whenCollideDo(bache2,{elemento => elemento.chocar()})
 		game.whenCollideDo(bache3,{elemento => elemento.chocar()})
 		game.whenCollideDo(bache4,{elemento => elemento.chocar()})
+		
+		
+		//colisiones auto
+		//game.whenCollideDo(auto1,{elemento => elemento.chocar()})
+		
+		//game.onCollideDo(auto1,{elemento => elemento.chocar() })
+		
+		
 		
 		
 		
@@ -147,11 +155,43 @@ object rabbitWin {
 
 object barraVidas{
 	
+
 	
-	method image() = "assets/vidas-"  + rabbit.vidas() + ".png"
+	var property image= "assets/vidas-3.png"
+	
 
 	method position() = game.at(0,5)
 	
+	method perderVida(){
+		
+		if (rabbit.vidas() == 3){
+			image= "assets/vidas-2.png"
+			rabbit.vidas(2)
+			
+		}else if(rabbit.vidas()==2){
+			image = "assets/vidas-1.png"
+			rabbit.vidas(1)
+		}else if(rabbit.vidas()==1){
+			rabbitGameOver.perder()
+		}
+	
+		
+	}
+	
+
+}
+
+object rabbitGameOver {
+
+	var property image = "assets/perder.jpg"
+	var property position = game.origin()
+
+	method perder() {
+		game.clear()
+		game.addVisual(self)
+		//game.schedule(1000, { => tablero.inicio()}) //VA AL INICIO DEL JUEGO
+		game.schedule(1000, { => start.inicio()}) //VA AL INICIO DEL TABLERO EN ULTIMA POSICION 
+	}
 }
 
 
