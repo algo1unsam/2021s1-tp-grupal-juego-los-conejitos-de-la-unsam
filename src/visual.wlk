@@ -2,7 +2,6 @@ import wollok.game.*
 import rabbit.*
 import config.*
 import transito.*
-import sonidos.*
 
 class Arbol {
 
@@ -191,8 +190,13 @@ object rabbitGameOver {
 	method perder() {
 		game.clear()
 		game.addVisual(self)
+		
 		//game.schedule(1000, { => tablero.inicio()}) //VA AL INICIO DEL JUEGO
-		game.schedule(1000, { => start.inicio()}) //VA AL INICIO DEL TABLERO EN ULTIMA POSICION 
+		game.schedule(1000, { =>tablero.inicio()}) //VA AL INICIO DEL TABLERO EN ULTIMA POSICION 
+		rabbit.vidas(3)
+		
+		barraVidas.image("assets/vidas-3.png")
+	
 	}
 }
 

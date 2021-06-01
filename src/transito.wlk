@@ -24,7 +24,13 @@ class Carretera{
 
 //problemas al pasarle una posicion inicial nueva al auto
 class Auto{
-	var property posicionInicial = new Position( x=3, y=5) //  eje y decide carril
+	
+	const posX = [3, 4, 5, 6, 7, 8, 9, 10,11]
+	const posY = [1,2,3,5,6,7]
+	
+	
+	
+	var property posicionInicial = new Position( x = 2, y = posY.anyOne()) //  eje y decide carril
 	var property image 
 	var property position = posicionInicial
 	var property velocidad = 200  // menor es este valor mas rapido
