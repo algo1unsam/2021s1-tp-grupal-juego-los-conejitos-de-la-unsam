@@ -26,7 +26,7 @@ class Bache {
 	
 	
 	method chocar(){
-		
+		rabbit.chocoCharco()
 	}
 }
 
@@ -108,14 +108,14 @@ object start {
 		game.addVisual(barraVidas)
 		
 		//colisiones baches
-		game.whenCollideDo(bache1,{elemento => elemento.chocar()})
-		game.whenCollideDo(bache2,{elemento => elemento.chocar()})
-		game.whenCollideDo(bache3,{elemento => elemento.chocar()})
-		game.whenCollideDo(bache4,{elemento => elemento.chocar()})
+		//game.whenCollideDo(bache1,{elemento => elemento.chocar()})
+		//game.whenCollideDo(bache2,{elemento => elemento.chocar()})
+		//game.whenCollideDo(bache3,{elemento => elemento.chocar()})
+		//game.whenCollideDo(bache4,{elemento => elemento.chocar()})
 		
 		
 		//colisiones auto
-		//game.whenCollideDo(auto1,{elemento => elemento.chocar()})
+		game.whenCollideDo(rabbit,{elemento => elemento.chocar()})
 		
 		//game.onCollideDo(auto1,{elemento => elemento.chocar() })
 		
