@@ -88,7 +88,8 @@ class Auto{
 	}
 	
 	method chocar(){
-	
+		
+		rabbit.chocoCharco()
 		
 	}
 	
