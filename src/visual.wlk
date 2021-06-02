@@ -26,7 +26,7 @@ class Bache {
 	
 	
 	method chocar(){
-		rabbit.chocoCharco()
+		rabbit.perdioVida()
 	}
 }
 
