@@ -42,6 +42,7 @@ class Auto{
 	}
 	
 	
+	
 	method arrancarDerechaIzquierda(){
 		
 	game.onTick(velocidad,"mover auto",{self.moverIzquierda()})

@@ -3,6 +3,8 @@ import visual.*
 
 program rabbitGame{
 	
+	
+	
 	tablero.inicio()
 
 	game.start()

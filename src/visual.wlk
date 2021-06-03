@@ -2,6 +2,7 @@ import wollok.game.*
 import rabbit.*
 import config.*
 import transito.*
+import sonidos.*
 
 class Arbol {
 
@@ -67,6 +68,8 @@ const bache4 = new Bache()
 
 const auto1= new Auto(image="assets/camion4R.png")
 
+const camion1 = new Auto(image="assets/camion2R.png")
+
 
 object intro {
 
@@ -88,6 +91,8 @@ object logo {
 	var property position = new Position(x = 4, y = 4)
 
 }
+
+		
 
 object start {
 
@@ -124,11 +129,15 @@ object start {
 		
 		
 		
-		
 		//puesta en marcha del auto
 		game.addVisual(auto1)
 		auto1.arrancarIzquierdaDerecha()
 		game.showAttributes(auto1)
+		
+		
+		game.addVisual(camion1)
+		camion1.arrancarIzquierdaDerecha()
+		
 		
 		
 		
@@ -199,6 +208,8 @@ object rabbitGameOver {
 	
 	}
 }
+
+
 
 
 
