@@ -11,7 +11,6 @@ class Arbol {
 	
 	
 	method chocar(){
-		
 	}
 
 
@@ -45,11 +44,12 @@ object tablero {
 		game.boardGround("assets/tableroSA.png")
 		game.addVisual(intro)
 		game.schedule(500, { => game.addVisual(titulo)})
-		game.schedule(500, { => game.addVisual(logo)})  // esta generando problemas por el tamaño segun wollok
+		game.schedule(500, { => game.addVisual(logo)}) 
+		game.schedule(500, { => game.addVisual(enter)}) 
 		
 		
 		
-		game.schedule(500, { => game.say(logo, "Presionar 'Enter' para comenzar")})// por el error de arriba esto no se muestra
+		//game.schedule(500, { => game.say(logo, "Presionar 'Enter' para comenzar")})// por el error de arriba esto no se muestra
 		keyboard.enter().onPressDo({ start.inicio()})
 		
 		
@@ -112,17 +112,9 @@ object start {
 		game.showAttributes(rabbit) // Debug	
 		game.addVisual(barraVidas)
 		
-		//colisiones baches
-		//game.whenCollideDo(bache1,{elemento => elemento.chocar()})
-		//game.whenCollideDo(bache2,{elemento => elemento.chocar()})
-		//game.whenCollideDo(bache3,{elemento => elemento.chocar()})
-		//game.whenCollideDo(bache4,{elemento => elemento.chocar()})
 		
-		
-		//colisiones auto
-		game.whenCollideDo(rabbit,{elemento => elemento.chocar()})
-		
-		//game.onCollideDo(auto1,{elemento => elemento.chocar() })
+		//colisiones del conjeo con los objetos
+		game.onCollideDo(rabbit,{elemento => elemento.chocar()})
 		
 		
 		//no estaria funcionando bien (no entiendo bien la diferencia entre los dos collideDo)
@@ -209,7 +201,12 @@ object rabbitGameOver {
 	}
 }
 
+object enter {
 
+	var property image = "assets/ENTER.png"
+	var property position = new Position(x = 0, y = 0)
+
+}
 
 
 
