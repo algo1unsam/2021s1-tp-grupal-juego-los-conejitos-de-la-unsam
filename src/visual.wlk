@@ -112,12 +112,11 @@ object start {
 		game.showAttributes(rabbit) // Debug	
 		game.addVisual(barraVidas)
 		
+		game.addVisual(vidaExtra)
 		
 		//colisiones del conjeo con los objetos
 		game.onCollideDo(rabbit,{elemento => elemento.chocar()})
 		
-		
-		//no estaria funcionando bien (no entiendo bien la diferencia entre los dos collideDo)
 		
 		
 		
@@ -139,6 +138,32 @@ object start {
 
 	}
 
+}
+object vidaExtra{
+	
+	var property image = "assets/zanahoria50.png"
+	
+	const posX = [3, 4, 5, 6, 7, 8, 9, 10,11]
+	const posY = [1,2,3,5,6,7]
+	
+	
+	
+	var property position = new Position( x = posX.anyOne(), y = posY.anyOne())
+	
+	
+	method chocar(){
+	
+
+	
+		
+	}
+	
+	
+	method ganarVida(){
+		
+	}
+	
+	
 }
 
 object rabbitWin {

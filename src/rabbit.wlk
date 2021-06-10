@@ -19,7 +19,9 @@ object rabbit {
 		self.mueve(position.distance(nuevaPosicion))
 		position = nuevaPosicion
 	}
-
+	
+	
+	//revisar este metodo no se usa
 	method estaCansado() {
 		return energia <= 0
 	}
@@ -54,7 +56,7 @@ object rabbit {
 		if (self.position().y() < game.height() - 1) {
 			self.irA(self.position().up(1))
 		}
-				else if(game.at(self.position().x(),self.position().y() + 1).allElements()){
+				else if(game.at(self.position().x(),self.position().y() + 1)){ //revisar error
 			self.noPuedo()
 		}
 		self.llego()
@@ -68,16 +70,18 @@ object rabbit {
 			
 		}
 	}
-	
+	// revisar este metodo no se usa
 	method perderVidas(choque){
 		vidas= (vidas - choque).max(0)
 		if (vidas==0){
 			self.finJuegoPor(choque)
 		}
 	}
+	
+	//revisar este metodo no se usa
 	method finJuegoPor(motivo){
 		game.schedule(2000,{game.stop()})
-	}
+	} 
 	
 	
 	method perdioVida(){
