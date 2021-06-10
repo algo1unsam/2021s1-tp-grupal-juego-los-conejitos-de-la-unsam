@@ -69,26 +69,29 @@ const bache4 = new Bache()
 
 //autos
 
-const camion2R = new Auto(image="assets/camion2R.png")
-const camion1L = new Auto(image="assets/camion1L.png")
-const camion1R = new Auto(image="assets/camion1R.png")
-const camion2L = new Auto(image="assets/camion2L.png")
-const camion3L= new Auto(image="assets/camion3L.png")
-const camion3R = new Auto(image="assets/camion3R.png")
-const camion4L = new Auto(image="assets/camion4L.png")
-const camion4R= new Auto(image="assets/camion4R.png")
+const camion2R = new AutoIzquierdaDerecha(image="assets/camion2R.png")
+const camion1L = new AutoDerechaIzquierda(image="assets/camion1L.png")
+const camion1R = new AutoIzquierdaDerecha(image="assets/camion1R.png")
+const camion2L = new AutoDerechaIzquierda(image="assets/camion2L.png")
+const camion3L= new AutoDerechaIzquierda(image="assets/camion3L.png")
+const camion3R = new AutoIzquierdaDerecha(image="assets/camion3R.png")
+const camion4L = new AutoDerechaIzquierda(image="assets/camion4L.png")
+const camion4R= new AutoIzquierdaDerecha(image="assets/camion4R.png")
 
 
-const auto1L = new Auto(image="assets/camion1L.png") 
-const auto1R = new Auto(image="assets/camion1R.png")
-const auto2L = new Auto(image="assets/camion2L.png")
-const auto2R = new Auto(image="assets/camion2R.png")
+const auto1L = new AutoDerechaIzquierda(image="assets/camion1L.png") 
+const auto1R = new AutoIzquierdaDerecha(image="assets/camion1R.png")
+const auto2L = new AutoDerechaIzquierda(image="assets/camion2L.png")
+const auto2R = new AutoIzquierdaDerecha(image="assets/camion2R.png")
 
-//carretera
+//carretera de arriba que va de izquierda a derecha
 
-const carretera = new Carretera(autosTrafico=[camion2R])
+const carreteraArriba = new Carretera(autosTrafico=[camion1L,camion2L,camion3L,camion4L,camion4R])
 
-	
+
+//carretera de abajo que va de derecha a izquierda
+
+const carreteraAbajo = new Carretera(autosTrafico=[camion2R,camion1R,camion3R,camion4R,auto1R,auto2R])
 
 
 
@@ -141,8 +144,13 @@ object start {
 		
 		//puesta en marcha del auto
 		game.addVisual(camion4R)
-		camion4R.arrancarIzquierdaDerecha()
+		camion4R.arrancarAuto()
 		game.showAttributes(camion4R)
+		game.addVisual(camion4L)
+		camion4L.arrancarAuto()
+	
+		game.addVisual(auto1L)
+		auto1L.arrancarAuto()
 		
 	
 		
