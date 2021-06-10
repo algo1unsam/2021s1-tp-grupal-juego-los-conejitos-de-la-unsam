@@ -49,7 +49,7 @@ object tablero {
 		
 		
 		
-		//game.schedule(500, { => game.say(logo, "Presionar 'Enter' para comenzar")})// por el error de arriba esto no se muestra
+
 		keyboard.enter().onPressDo({ start.inicio()})
 		
 		
@@ -66,9 +66,30 @@ const bache2 = new Bache()
 const bache3 = new Bache()
 const bache4 = new Bache()
 
-const auto1= new Auto(image="assets/camion4R.png")
 
-const camion1 = new Auto(image="assets/camion2R.png")
+//autos
+
+const camion2R = new Auto(image="assets/camion2R.png")
+const camion1L = new Auto(image="assets/camion1L.png")
+const camion1R = new Auto(image="assets/camion1R.png")
+const camion2L = new Auto(image="assets/camion2L.png")
+const camion3L= new Auto(image="assets/camion3L.png")
+const camion3R = new Auto(image="assets/camion3R.png")
+const camion4L = new Auto(image="assets/camion4L.png")
+const camion4R= new Auto(image="assets/camion4R.png")
+
+
+const auto1L = new Auto(image="assets/camion1L.png") 
+const auto1R = new Auto(image="assets/camion1R.png")
+const auto2L = new Auto(image="assets/camion2L.png")
+const auto2R = new Auto(image="assets/camion2R.png")
+
+//carretera
+
+const carretera = new Carretera(autosTrafico=[camion2R])
+
+	
+
 
 
 object intro {
@@ -101,8 +122,6 @@ object start {
 		game.addVisual(arbol1)
 		game.addVisual(arbol2)
 		game.addVisual(arbol3)
-//		if (not game.hasVisual(bache1)) {game.onTick(3000, "AgregarBache", { => game.addVisual(bache1) })}
-//		if (game.hasVisual(bache1)) {game.onTick(5000, "QuitarBache", { => game.removeVisual(bache1) })
 		game.addVisual(bache1)
 		game.addVisual(bache2)
 		game.addVisual(bache3)
@@ -121,16 +140,9 @@ object start {
 		
 		
 		//puesta en marcha del auto
-		game.addVisual(auto1)
-		auto1.arrancarIzquierdaDerecha()
-		game.showAttributes(auto1)
-		
-		
-		game.addVisual(camion1)
-		camion1.arrancarIzquierdaDerecha()
-		
-		
-		
+		game.addVisual(camion4R)
+		camion4R.arrancarIzquierdaDerecha()
+		game.showAttributes(camion4R)
 		
 	
 		
@@ -174,7 +186,6 @@ object rabbitWin {
 	method ganar() {
 		game.clear()
 		game.addVisual(self)
-		//game.schedule(1000, { => tablero.inicio()}) //VA AL INICIO DEL JUEGO
 		game.schedule(1000, { => start.inicio()}) //VA AL INICIO DEL TABLERO EN ULTIMA POSICION 
 	}
 }
@@ -217,7 +228,6 @@ object rabbitGameOver {
 		game.clear()
 		game.addVisual(self)
 		
-		//game.schedule(1000, { => tablero.inicio()}) //VA AL INICIO DEL JUEGO
 		game.schedule(1000, { =>tablero.inicio()}) //VA AL INICIO DEL TABLERO EN ULTIMA POSICION 
 		rabbit.vidas(3)
 		

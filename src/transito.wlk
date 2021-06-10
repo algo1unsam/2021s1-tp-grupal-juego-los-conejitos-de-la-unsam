@@ -13,6 +13,9 @@ class Carretera{
 		autosTrafico.add(unAuto)
 	}
 	
+	method autoAleatorio(){
+		return autosTrafico.anyOne()
+	}
 	
 }
 

@@ -5,7 +5,7 @@ import visual.*
 
 object rabbit {
 
-	var property energia = 100
+	var property energia = 100 // no se usa
 	var property vidas = 3
 	var property position = new Position(x = 7, y = 0) 
 
@@ -55,8 +55,7 @@ object rabbit {
 	method limiteUp() {
 		if (self.position().y() < game.height() - 1) {
 			self.irA(self.position().up(1))
-		}
-				else if(game.at(self.position().x(),self.position().y() + 1)){ //revisar error
+		} else if (game.at(self.position().x(), self.position().y() + 1)) { // revisar error
 			self.noPuedo()
 		}
 		self.llego()
