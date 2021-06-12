@@ -26,7 +26,7 @@ class Auto {
 	 // eje y decide carril
 	var property image
 	
-	var property velocidad = 200 // menor es este valor mas rapido
+	var property velocidad = 100.randomUpTo(200) // menor es este valor mas rapido
 
 	method imagen(unaImagen) { // tengo que pasarle una direccion de archivo
 		image = unaImagen
@@ -53,9 +53,9 @@ class Auto {
 //aca voy a crear dos clases disintas dependiendo si el auto va de izquierda-derecha o viceverza
 class AutoIzquierdaDerecha inherits Auto {
 	
-	const posX = [ ]
+	///const posX = [ ]
 	//const posY = [5,6,7 ]
-	var property posicionInicial = new Position(x = 2, y = 5.randomUpTo(7))
+	var property posicionInicial = self.dondeAparece()
 	var property position = posicionInicial
 	
 	override method estaAlBorde() {
@@ -67,20 +67,30 @@ class AutoIzquierdaDerecha inherits Auto {
 	}
 
 	override method mover() {
-		if (self.estaAlBorde()) {
-			position = posicionInicial
-		} else {
+		if (not self.estaAlBorde()) {
 			position = position.right(1)
+		} else {
+			self.darVuelta()
 		}
 	}
+	
+	method darVuelta() {
+		position = self.dondeAparece()
+		
+		
+	}
 
+	method dondeAparece() {
+		return new Position(x = 2, y = 5.randomUpTo(8))
+	}
+	
 }
 
 class AutoDerechaIzquierda inherits Auto {
 	
-	const posX = []
+	//const posX = []
 	//const posY = [1 ,2 ,3]
-	var property posicionInicial = new Position(x = 10, y = 1.randomUpTo(3))
+	var property posicionInicial = self.dondeAparece()
 	var property position = posicionInicial
 
 	override method estaAlBorde() {
@@ -92,11 +102,19 @@ class AutoDerechaIzquierda inherits Auto {
 	}
 
 	override method mover() {
-		if (self.estaAlBorde()) {
-			position = posicionInicial
-		} else {
+		if (not self.estaAlBorde()) {
 			position = position.left(1)
+		} else {
+			self.darVuelta()
 		}
+	}
+	
+	method darVuelta() {
+		position = self.dondeAparece()
+	}
+
+	method dondeAparece() {
+		return new Position(x = 10, y = 1.randomUpTo(4))
 	}
 
 }

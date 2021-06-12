@@ -69,10 +69,10 @@ const bache4 = new Bache()
 
 //autos
 
+const camion2L = new AutoDerechaIzquierda(image="assets/camion2L.png")
 const camion2R = new AutoIzquierdaDerecha(image="assets/camion2R.png")
 const camion1L = new AutoDerechaIzquierda(image="assets/camion1L.png")
 const camion1R = new AutoIzquierdaDerecha(image="assets/camion1R.png")
-const camion2L = new AutoDerechaIzquierda(image="assets/camion2L.png")
 const camion3L= new AutoDerechaIzquierda(image="assets/camion3L.png")
 const camion3R = new AutoIzquierdaDerecha(image="assets/camion3R.png")
 const camion4L = new AutoDerechaIzquierda(image="assets/camion4L.png")
@@ -83,6 +83,9 @@ const auto1L = new AutoDerechaIzquierda(image="assets/camion1L.png")
 const auto1R = new AutoIzquierdaDerecha(image="assets/camion1R.png")
 const auto2L = new AutoDerechaIzquierda(image="assets/camion2L.png")
 const auto2R = new AutoIzquierdaDerecha(image="assets/camion2R.png")
+
+const vehiculosDeIzquierdaADerecha = [camion2R,camion1R,camion3R, camion4R]
+const vehiculosDeDerechaAIzquierda = [camion2L,camion1L,camion3L, camion4L]
 
 //carretera de arriba que va de izquierda a derecha
 
@@ -145,12 +148,16 @@ object start {
 		//puesta en marcha del auto
 		game.addVisual(camion4R)
 		camion4R.arrancarAuto()
-		game.showAttributes(camion4R)
+		game.addVisual(camion3R)
+		camion3R.arrancarAuto()
+		game.addVisual(auto1R)
+		auto1R.arrancarAuto()
 		game.addVisual(camion4L)
 		camion4L.arrancarAuto()
-	
 		game.addVisual(auto1L)
 		auto1L.arrancarAuto()
+		game.addVisual(auto2L)
+		auto2L.arrancarAuto()
 
 	}
 
