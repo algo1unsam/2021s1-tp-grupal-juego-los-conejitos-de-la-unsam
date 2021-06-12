@@ -151,10 +151,6 @@ object start {
 	
 		game.addVisual(auto1L)
 		auto1L.arrancarAuto()
-		
-	
-		
-		
 
 	}
 
@@ -167,20 +163,13 @@ object vidaExtra{
 	const posY = [1,2,3,5,6,7]
 	
 	
-	
 	var property position = new Position( x = posX.anyOne(), y = posY.anyOne())
 	
 	
 	method chocar(){
-	
+		barraVidas.ganarVida()
+		game.removeVisual(self)
 
-	
-		
-	}
-	
-	
-	method ganarVida(){
-		
 	}
 	
 	
@@ -200,8 +189,6 @@ object rabbitWin {
 
 
 object barraVidas{
-	
-
 	
 	var property image= "assets/vidas-3.png"
 	
@@ -224,6 +211,20 @@ object barraVidas{
 		
 	}
 	
+		method ganarVida(){
+		
+		if (rabbit.vidas() == 2){
+			image= "assets/vidas-3.png"
+			rabbit.vidas(3)
+			
+		}else if(rabbit.vidas()==1){
+			image = "assets/vidas-2.png"
+			rabbit.vidas(2)
+			
+		}
+	}
+	
+
 
 }
 
