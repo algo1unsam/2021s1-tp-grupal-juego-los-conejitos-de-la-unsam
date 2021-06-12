@@ -35,8 +35,7 @@ class Auto {
 	method arrancarAuto() {
 	}
 
-	method estaAlBorde() {
-	}
+	method estaAlBorde() 
 
 	method mover() {
 	}

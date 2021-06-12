@@ -69,24 +69,12 @@ object rabbit {
 			
 		}
 	}
-	// revisar este metodo no se usa
-	method perderVidas(choque){
-		vidas= (vidas - choque).max(0)
-		if (vidas==0){
-			self.finJuegoPor(choque)
-		}
-	}
-	
-	//revisar este metodo no se usa
-	method finJuegoPor(motivo){
-		game.schedule(2000,{game.stop()})
-	} 
-	
 	
 	method perdioVida(){
 		position= new Position(x = 7, y = 0) 
 		 barraVidas.perderVida()
 	}
+	
 	
 	method noMoverse(posX, posY){
 		position= new Position(x = posX -1, y = posY -1) 
