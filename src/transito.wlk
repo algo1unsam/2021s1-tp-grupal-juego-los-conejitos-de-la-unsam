@@ -55,12 +55,12 @@ class Auto {
 class AutoIzquierdaDerecha inherits Auto {
 	
 	const posX = [ ]
-	const posY = [5,6,7 ]
-	var property posicionInicial = new Position(x = 2, y = posY.anyOne())
+	//const posY = [5,6,7 ]
+	var property posicionInicial = new Position(x = 2, y = 5.randomUpTo(7))
 	var property position = posicionInicial
 	
 	override method estaAlBorde() {
-		return position.x() > 10
+		return position.x() > 9
 	}
 
 	override method arrancarAuto() {
@@ -80,12 +80,12 @@ class AutoIzquierdaDerecha inherits Auto {
 class AutoDerechaIzquierda inherits Auto {
 	
 	const posX = []
-	const posY = [1 ,2 ,3]
-	var property posicionInicial = new Position(x = 10, y = posY.anyOne())
+	//const posY = [1 ,2 ,3]
+	var property posicionInicial = new Position(x = 10, y = 1.randomUpTo(3))
 	var property position = posicionInicial
 
 	override method estaAlBorde() {
-		return position.x() < 2
+		return position.x() < 4
 	}
 
 	override method arrancarAuto() {
