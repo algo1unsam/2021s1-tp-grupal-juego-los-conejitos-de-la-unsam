@@ -89,12 +89,12 @@ const vehiculosDeDerechaAIzquierda = [camion2L,camion1L,camion3L, camion4L]
 
 //carretera de arriba que va de izquierda a derecha
 
-const carreteraArriba = new Carretera(autosTrafico=[camion1L,camion2L,camion3L,camion4L,camion4R])
+const carreteraArriba = new Carretera(autosTrafico=vehiculosDeIzquierdaADerecha)
 
 
 //carretera de abajo que va de derecha a izquierda
 
-const carreteraAbajo = new Carretera(autosTrafico=[camion2R,camion1R,camion3R,camion4R,auto1R,auto2R])
+const carreteraAbajo = new Carretera(autosTrafico=vehiculosDeDerechaAIzquierda)
 
 
 
@@ -102,6 +102,7 @@ object intro {
 
 	var property image = "assets/inicio.png"
 	var property position = game.origin()
+	
 
 }
 
@@ -190,6 +191,7 @@ object rabbitWin {
 	var property position = game.origin()
 
 	method ganar() {
+		ruido.parar()
 		ganador.reproducir()
 		game.clear()
 		game.addVisual(self)
