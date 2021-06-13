@@ -125,6 +125,8 @@ object start {
 
 	method inicio() {
 		game.clear()
+		
+		ruido.reproducir()
 		game.addVisual(arbol1)
 		game.addVisual(arbol2)
 		game.addVisual(arbol3)
@@ -243,7 +245,7 @@ object rabbitGameOver {
 	var property position = game.origin()
 
 	method perder() {
-		
+		ruido.parar()
 		gameOver.reproducir()
 		game.clear()
 		game.addVisual(self)
