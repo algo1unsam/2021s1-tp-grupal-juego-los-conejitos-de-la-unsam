@@ -1,6 +1,7 @@
 import wollok.game.*
 import config.*
 import visual.*
+import sonidos.*
 
 object rabbit {
 
@@ -66,6 +67,7 @@ object rabbit {
 	method perdioVida() {
 		position = new Position(x = 7, y = 0)
 		barraVidas.perderVida()
+	
 	}
 
 	method noMoverse(posX, posY) {

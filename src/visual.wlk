@@ -188,6 +188,7 @@ object rabbitWin {
 	var property position = game.origin()
 
 	method ganar() {
+		ganador.reproducir()
 		game.clear()
 		game.addVisual(self)
 		game.schedule(1000, { => start.inicio()}) //VA AL INICIO DEL TABLERO EN ULTIMA POSICION 
@@ -208,6 +209,7 @@ object barraVidas{
 			image= "assets/vidas-2.png"
 			rabbit.vidas(2)
 			
+			
 		}else if(rabbit.vidas()==2){
 			image = "assets/vidas-1.png"
 			rabbit.vidas(1)
@@ -219,7 +221,7 @@ object barraVidas{
 	}
 	
 		method ganarVida(){
-		
+		vida.reproducir()
 		if (rabbit.vidas() == 2){
 			image= "assets/vidas-3.png"
 			rabbit.vidas(3)
@@ -241,6 +243,8 @@ object rabbitGameOver {
 	var property position = game.origin()
 
 	method perder() {
+		
+		gameOver.reproducir()
 		game.clear()
 		game.addVisual(self)
 		
