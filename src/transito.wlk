@@ -1,6 +1,7 @@
 import wollok.game.*
 import rabbit.*
 import visual.*
+import sonidos.*
 
 //aca se van a ir agregando los autos que van a ir por la carretera
 class Carretera {

@@ -35,3 +35,5 @@ const auch = new Sonido(direccion="sound/error-fallo.mp3")
 const ganador = new Sonido(direccion="sound/ganador.mp3")
 
 const ruido = new Sonido(direccion="sound/ruidoTrafico.mp3")
+
+const introGame = new Sonido(direccion="sound/zelda.mp3")

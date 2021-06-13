@@ -27,6 +27,7 @@ class Bache {
 	
 	method chocar(){
 		rabbit.perdioVida()
+
 	}
 }
 
@@ -43,9 +44,11 @@ object tablero {
 		game.width(15)//ancho
 		game.boardGround("assets/tableroSA.png")
 		game.addVisual(intro)
+		
 		game.schedule(500, { => game.addVisual(titulo)})
 		game.schedule(500, { => game.addVisual(logo)}) 
 		game.schedule(500, { => game.addVisual(enter)}) 
+	
 		
 		
 		
@@ -208,6 +211,7 @@ object barraVidas{
 	method position() = game.at(0,5)
 	
 	method perderVida(){
+		
 		
 		if (rabbit.vidas() == 3){
 			image= "assets/vidas-2.png"
