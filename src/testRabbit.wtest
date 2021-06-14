@@ -21,15 +21,23 @@ describe "Rabbit Wollok Game" {
 	}
 
 	test "4.Testear que Rabbit lleo sano y salvo a la meta" {
+		assert.equals(game.at(7, 0), rabbit.position())
 		rabbit.limiteUp()
+		assert.equals(game.at(7, 1), rabbit.position())
 		rabbit.limiteUp()
+		assert.equals(game.at(7, 2), rabbit.position())
 		rabbit.limiteUp()
+		assert.equals(game.at(7, 3), rabbit.position())
 		rabbit.limiteUp()
-		rabbit.limiteUp()
+		assert.equals(game.at(7, 4), rabbit.position())
 //		rabbit.limiteUp()
+//		assert.equals(game.at(7, 5), rabbit.position())
 //		rabbit.limiteUp()
+//		assert.equals(game.at(7, 6), rabbit.position())
 //		rabbit.limiteUp()
-		assert.equals(game.at(7, 5), rabbit.position())
+//		assert.equals(game.at(7, 7), rabbit.position())
+//		rabbit.limiteUp()
+//		assert.equals(game.at(7, 8), rabbit.position())
 	}
 
 //	test "Testear limite izquierdo del tablero" {

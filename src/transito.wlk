@@ -4,19 +4,19 @@ import visual.*
 import sonidos.*
 
 //aca se van a ir agregando los autos que van a ir por la carretera
-class Carretera {
-
-	var property autosTrafico = []
-
-	method agregarAuto(unAuto) {
-		autosTrafico.add(unAuto)
-	}
-
-	method autoAleatorio() {
-		return autosTrafico.anyOne()
-	}
-
-}
+//class Carretera {
+//
+//	var property autosTrafico = []
+//
+//	method agregarAuto(unAuto) {
+//		autosTrafico.add(unAuto)
+//	}
+//
+//	method autoAleatorio() {
+//		return autosTrafico.anyOne()
+//	}
+//
+//}
 
 // si el auto hace derecha-izquierda tiene que empezar con x=12 de posicion inicial
 //si el auto hace izquierda-derecha tienq que empezar con x=2 de posicion inicial
@@ -52,8 +52,6 @@ class Auto {
 //aca voy a crear dos clases disintas dependiendo si el auto va de izquierda-derecha o viceverza
 class AutoIzquierdaDerecha inherits Auto {
 
-	// /const posX = [ ]
-	// const posY = [5,6,7 ]
 	var property posicionInicial = self.dondeAparece()
 	var property position = posicionInicial
 
@@ -78,7 +76,7 @@ class AutoIzquierdaDerecha inherits Auto {
 	}
 
 	method dondeAparece() {
-		return new Position(x = 2, y = 5.randomUpTo(8))
+		return new Position(x = 3, y = 5.randomUpTo(8))
 	}
 
 }
@@ -115,4 +113,6 @@ class AutoDerechaIzquierda inherits Auto {
 	}
 
 }
+
+
 

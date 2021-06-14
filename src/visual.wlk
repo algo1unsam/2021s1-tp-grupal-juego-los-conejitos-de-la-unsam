@@ -58,13 +58,13 @@ const bache3 = new Bache()
 const bache4 = new Bache()
 
 //autos
-const camion2L = new AutoDerechaIzquierda(image = "assets/camion2L.png")
-
-const camion2R = new AutoIzquierdaDerecha(image = "assets/camion2R.png")
-
 const camion1L = new AutoDerechaIzquierda(image = "assets/camion1L.png")
 
 const camion1R = new AutoIzquierdaDerecha(image = "assets/camion1R.png")
+
+const camion2L = new AutoDerechaIzquierda(image = "assets/camion2L.png")
+
+const camion2R = new AutoIzquierdaDerecha(image = "assets/camion2R.png")
 
 const camion3L = new AutoDerechaIzquierda(image = "assets/camion3L.png")
 
@@ -74,23 +74,23 @@ const camion4L = new AutoDerechaIzquierda(image = "assets/camion4L.png")
 
 const camion4R = new AutoIzquierdaDerecha(image = "assets/camion4R.png")
 
-const auto1L = new AutoDerechaIzquierda(image = "assets/camion1L.png")
+const auto1L = new AutoDerechaIzquierda(image = "assets/auto1L.png")
 
-const auto1R = new AutoIzquierdaDerecha(image = "assets/camion1R.png")
+const auto1R = new AutoIzquierdaDerecha(image = "assets/auto1R.png")
 
-const auto2L = new AutoDerechaIzquierda(image = "assets/camion2L.png")
+const auto2L = new AutoDerechaIzquierda(image = "assets/auto2L.png")
 
-const auto2R = new AutoIzquierdaDerecha(image = "assets/camion2R.png")
+const auto2R = new AutoIzquierdaDerecha(image = "assets/auto2R.png")
 
-const vehiculosDeIzquierdaADerecha = [ camion2R, camion1R, camion3R, camion4R ]
+//const vehiculosDeIzquierdaADerecha = [ camion1R, camion2R, camion3R, camion4R, auto1R, auto2R ]
 
-const vehiculosDeDerechaAIzquierda = [ camion2L, camion1L, camion3L, camion4L ]
+//const vehiculosDeDerechaAIzquierda = [ camion1L, camion2L, camion3L, camion4L, auto1L, auto2L ]
 
 //carretera de arriba que va de izquierda a derecha
-const carreteraArriba = new Carretera(autosTrafico = vehiculosDeIzquierdaADerecha)
+//const carreteraArriba = new Carretera(autosTrafico = vehiculosDeIzquierdaADerecha)
 
 //carretera de abajo que va de derecha a izquierda
-const carreteraAbajo = new Carretera(autosTrafico = vehiculosDeDerechaAIzquierda)
+//const carreteraAbajo = new Carretera(autosTrafico = vehiculosDeDerechaAIzquierda)
 
 object intro {
 
@@ -133,19 +133,33 @@ object start {
 			// colisiones del conjeo con los objetos
 		game.onCollideDo(rabbit, { elemento => elemento.chocar()})
 			// puesta en marcha del auto
-		game.addVisual(camion4R)
-		camion4R.arrancarAuto()
-		game.addVisual(camion3R)
-		camion3R.arrancarAuto()
+		game.addVisual(camion1R)
+		camion1R.arrancarAuto()
+		game.addVisual(camion2R)
+		camion2R.arrancarAuto()
+		//game.addVisual(camion3R)
+		//camion3R.arrancarAuto()
+		//game.addVisual(camion4R)
+		//camion4R.arrancarAuto()
 		game.addVisual(auto1R)
 		auto1R.arrancarAuto()
+		game.addVisual(auto2R)
+		auto2R.arrancarAuto()
+		//game.addVisual(camion1L)
+		//camion1L.arrancarAuto()
+		//game.addVisual(camion2L)
+		//camion2L.arrancarAuto()
+		game.addVisual(camion3L)
+		camion3L.arrancarAuto()
 		game.addVisual(camion4L)
 		camion4L.arrancarAuto()
 		game.addVisual(auto1L)
 		auto1L.arrancarAuto()
 		game.addVisual(auto2L)
 		auto2L.arrancarAuto()
+		
 	}
+
 
 }
 
