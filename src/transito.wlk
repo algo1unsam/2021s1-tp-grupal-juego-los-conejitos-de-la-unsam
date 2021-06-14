@@ -26,7 +26,7 @@ class Auto {
 
 	// eje y decide carril
 	var property image
-	var property velocidad = 100.randomUpTo(200) // menor es este valor mas rapido
+	var property velocidad = 200.randomUpTo(300) // menor es este valor mas rapido
 
 	method imagen(unaImagen) { // tengo que pasarle una direccion de archivo
 		image = unaImagen
