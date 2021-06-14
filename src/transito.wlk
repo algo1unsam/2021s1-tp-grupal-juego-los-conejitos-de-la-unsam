@@ -26,7 +26,7 @@ class Auto {
 
 	// eje y decide carril
 	var property image
-	var property velocidad = 100.randomUpTo(200) // menor es este valor mas rapido
+	var property velocidad = 200.randomUpTo(300) // menor es este valor mas rapido
 
 	method imagen(unaImagen) { // tengo que pasarle una direccion de archivo
 		image = unaImagen
@@ -52,8 +52,6 @@ class Auto {
 //aca voy a crear dos clases disintas dependiendo si el auto va de izquierda-derecha o viceverza
 class AutoIzquierdaDerecha inherits Auto {
 
-	// /const posX = [ ]
-	// const posY = [5,6,7 ]
 	var property posicionInicial = self.dondeAparece()
 	var property position = posicionInicial
 
