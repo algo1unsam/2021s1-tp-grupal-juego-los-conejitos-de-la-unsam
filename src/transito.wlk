@@ -24,9 +24,8 @@ class Carretera {
 //problemas al pasarle una posicion inicial nueva al auto
 class Auto {
 
-	 // eje y decide carril
+	// eje y decide carril
 	var property image
-	
 	var property velocidad = 100.randomUpTo(200) // menor es este valor mas rapido
 
 	method imagen(unaImagen) { // tengo que pasarle una direccion de archivo
@@ -36,7 +35,7 @@ class Auto {
 	method arrancarAuto() {
 	}
 
-	method estaAlBorde() 
+	method estaAlBorde()
 
 	method mover() {
 	}
@@ -44,21 +43,20 @@ class Auto {
 	method chocar() {
 		rabbit.perdioVida()
 	}
-	
-	
-	// crear metodo para que no se creen dos autos superpuestos
-	//game.uniqueCollider(self) // este metodo retorna el objecto que este en la misma posicion que el mismo (por el self)
+
+// crear metodo para que no se creen dos autos superpuestos
+// game.uniqueCollider(self) // este metodo retorna el objecto que este en la misma posicion que el mismo (por el self)
 //la idea es que elimine al otro elemento que este el la misma posicion con game.removeVisual()
 }
-	
+
 //aca voy a crear dos clases disintas dependiendo si el auto va de izquierda-derecha o viceverza
 class AutoIzquierdaDerecha inherits Auto {
-	
-	///const posX = [ ]
-	//const posY = [5,6,7 ]
+
+	// /const posX = [ ]
+	// const posY = [5,6,7 ]
 	var property posicionInicial = self.dondeAparece()
 	var property position = posicionInicial
-	
+
 	override method estaAlBorde() {
 		return position.x() > 9
 	}
@@ -74,23 +72,21 @@ class AutoIzquierdaDerecha inherits Auto {
 			self.darVuelta()
 		}
 	}
-	
+
 	method darVuelta() {
 		position = self.dondeAparece()
-		
-		
 	}
 
 	method dondeAparece() {
 		return new Position(x = 2, y = 5.randomUpTo(8))
 	}
-	
+
 }
 
 class AutoDerechaIzquierda inherits Auto {
-	
-	//const posX = []
-	//const posY = [1 ,2 ,3]
+
+	// const posX = []
+	// const posY = [1 ,2 ,3]
 	var property posicionInicial = self.dondeAparece()
 	var property position = posicionInicial
 
@@ -109,7 +105,7 @@ class AutoDerechaIzquierda inherits Auto {
 			self.darVuelta()
 		}
 	}
-	
+
 	method darVuelta() {
 		position = self.dondeAparece()
 	}
@@ -119,17 +115,4 @@ class AutoDerechaIzquierda inherits Auto {
 	}
 
 }
-
-
-		
-		
-	
-		
-	
-
-
-
-
-
-	
 

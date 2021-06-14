@@ -2,10 +2,6 @@ import wollok.game.*
 import visual.*
 
 program rabbitGame{
-	
-	
-	
 	tablero.inicio()
-
 	game.start()
 }
