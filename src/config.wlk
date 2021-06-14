@@ -8,7 +8,6 @@ object config {
 		keyboard.right().onPressDo({ rabbit.limiteRight()})
 		keyboard.up().onPressDo({ rabbit.limiteUp()})
 		keyboard.down().onPressDo({ rabbit.limiteDown()})
-		keyboard.h().onPressDo({ rabbit.saluda()})
 	}
 
 }
