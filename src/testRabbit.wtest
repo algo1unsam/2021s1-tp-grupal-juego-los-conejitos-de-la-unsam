@@ -1,0 +1,44 @@
+import config.*
+import rabbit.*
+import transito.*
+import visual.*
+import wollok.game.*
+
+describe "Rabbit Wollok Game" {
+
+	test "1.Testear que la posicion del Rabbit sea abajo en el centro del tablero" {
+		assert.equals(game.at(7, 0), rabbit.position())
+	}
+
+	test "2.Testear que los movimientos le quitan energia a Rabbit" {
+		rabbit.mueve(5)
+		assert.equals(85, rabbit.energia())
+	}
+
+	test "3.Testear que luedo de caminar 35 pasos Rabbit esta cansado" {
+		rabbit.mueve(35)
+		assert.that(rabbit.estaCansado())
+	}
+
+	test "4.Testear que Rabbit lleo sano y salvo a la meta" {
+		rabbit.limiteUp()
+		rabbit.limiteUp()
+		rabbit.limiteUp()
+		rabbit.limiteUp()
+		rabbit.limiteUp()
+//		rabbit.limiteUp()
+//		rabbit.limiteUp()
+//		rabbit.limiteUp()
+		assert.equals(game.at(7, 5), rabbit.position())
+	}
+
+//	test "Testear limite izquierdo del tablero" {
+//		rabbit.limiteLeft()
+//		rabbit.limiteLeft()
+//		rabbit.limiteLeft()
+//		rabbit.limiteLeft()
+//		rabbit.limiteLeft()
+//		assert.equals(game.at(3,0), rabbit.position())
+//	}
+}
+

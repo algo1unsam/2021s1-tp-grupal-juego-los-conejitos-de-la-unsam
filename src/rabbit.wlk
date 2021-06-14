@@ -25,10 +25,6 @@ object rabbit {
 		return energia <= 0
 	}
 
-	method saluda() {
-		game.say(self, "Hola Peque!!!")
-	}
-
 	method limiteLeft() {
 		if (self.position().x() >= 4) {
 			self.irA(self.position().left(1))
@@ -50,8 +46,6 @@ object rabbit {
 	method limiteUp() {
 		if (self.position().y() < game.height() - 1) {
 			self.irA(self.position().up(1))
-		} else if (game.at(self.position().x(), self.position().y() + 1)) { // revisar error
-			self.noPuedo()
 		}
 		self.llego()
 	}
@@ -67,7 +61,6 @@ object rabbit {
 	method perdioVida() {
 		position = new Position(x = 7, y = 0)
 		barraVidas.perderVida()
-	
 	}
 
 	method noMoverse(posX, posY) {
