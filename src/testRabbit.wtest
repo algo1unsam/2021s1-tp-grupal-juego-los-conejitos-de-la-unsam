@@ -20,14 +20,11 @@ describe "Rabbit Wollok Game" {
 		assert.that(rabbit.estaCansado())
 	}
 
-	test "4.Testear que Rabbit lleo sano y salvo a la meta" {
+	test "4.Testear que Rabbit camina hacia arriba" {
 		assert.equals(game.at(7, 0), rabbit.position())
 		rabbit.limiteUp()
-		assert.equals(game.at(7, 1), rabbit.position())
 		rabbit.limiteUp()
-		assert.equals(game.at(7, 2), rabbit.position())
 		rabbit.limiteUp()
-		assert.equals(game.at(7, 3), rabbit.position())
 		rabbit.limiteUp()
 		assert.equals(game.at(7, 4), rabbit.position())
 //		rabbit.limiteUp()
@@ -40,7 +37,31 @@ describe "Rabbit Wollok Game" {
 //		assert.equals(game.at(7, 8), rabbit.position())
 	}
 
-//	test "Testear limite izquierdo del tablero" {
+
+	test "5.Testear si rabbit pierde vidas"{
+		assert.equals(3,rabbit.vidas())
+		rabbit.perdioVida()
+		assert.equals(2,rabbit.vidas())
+	}
+	
+	test "6.Testear si rabbit va a una posicion indicada"{
+		rabbit.irA(game.at(5,5)) 
+		assert.equals(game.at(5,5),rabbit.position())
+	}
+	
+	test "7.Testear que Rabbit llego sano y salvo a la meta" {
+		assert.equals(game.at(7, 0), rabbit.position())
+		rabbit.limiteUp()
+		rabbit.limiteUp()
+		rabbit.limiteUp()
+		rabbit.limiteUp()
+		rabbit.limiteUp()
+		rabbit.limiteUp()
+		rabbit.limiteUp()
+		rabbit.limiteUp()
+		//assert.(rabbit.llego())
+	}
+//	test "8.Testear limite izquierdo del tablero" {
 //		rabbit.limiteLeft()
 //		rabbit.limiteLeft()
 //		rabbit.limiteLeft()
@@ -48,13 +69,4 @@ describe "Rabbit Wollok Game" {
 //		rabbit.limiteLeft()
 //		assert.equals(game.at(3,0), rabbit.position())
 //	}
-
-	test "5-Testear si rabbit pierde vidas"{
-		assert.equals(3,rabbit.vidas())
-		rabbit.perdioVida()
-		assert.equals(2,rabbit.vidas())
-	}
-	
-	
 }
-
