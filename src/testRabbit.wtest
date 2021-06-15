@@ -48,5 +48,10 @@ describe "Rabbit Wollok Game" {
 //		rabbit.limiteLeft()
 //		assert.equals(game.at(3,0), rabbit.position())
 //	}
+
+	test "5-Testear si rabbit pierde vidas"{
+		rabbit.perdioVida()
+		assert.equals(2,rabbit.vidas())
+	}
 }
 
