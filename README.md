@@ -23,7 +23,7 @@ Los conejitos de la UNSAM
 ##Integrantes
  
 -Agustin Maggiolo
--Matias Freytte
+-Matias Freyte
 -Mariela Boyer
 -Pablo Sanchez
 -Pamela Roldán Breuer
