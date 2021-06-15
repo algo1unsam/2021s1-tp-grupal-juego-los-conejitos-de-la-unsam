@@ -63,9 +63,12 @@ object rabbit {
 		barraVidas.perderVida()
 	}
 
+	method gano() {
+		position = new Position(x = 7, y = 0)
+	}
+
 	method noMoverse(posX, posY) {
 		position = new Position(x = posX - 1, y = posY - 1)
 	}
 
 }
-

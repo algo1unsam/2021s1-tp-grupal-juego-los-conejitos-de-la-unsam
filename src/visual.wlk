@@ -83,15 +83,11 @@ const auto2L = new AutoDerechaIzquierda(image = "assets/auto2L.png")
 const auto2R = new AutoIzquierdaDerecha(image = "assets/auto2R.png")
 
 //const vehiculosDeIzquierdaADerecha = [ camion1R, camion2R, camion3R, camion4R, auto1R, auto2R ]
-
 //const vehiculosDeDerechaAIzquierda = [ camion1L, camion2L, camion3L, camion4L, auto1L, auto2L ]
-
 //carretera de arriba que va de izquierda a derecha
 //const carreteraArriba = new Carretera(autosTrafico = vehiculosDeIzquierdaADerecha)
-
 //carretera de abajo que va de derecha a izquierda
 //const carreteraAbajo = new Carretera(autosTrafico = vehiculosDeDerechaAIzquierda)
-
 object intro {
 
 	var property image = "assets/inicio.png"
@@ -137,18 +133,18 @@ object start {
 		camion1R.arrancarAuto()
 		game.addVisual(camion2R)
 		camion2R.arrancarAuto()
-		//game.addVisual(camion3R)
-		//camion3R.arrancarAuto()
-		//game.addVisual(camion4R)
-		//camion4R.arrancarAuto()
+			// game.addVisual(camion3R)
+			// camion3R.arrancarAuto()
+			// game.addVisual(camion4R)
+			// camion4R.arrancarAuto()
 		game.addVisual(auto1R)
 		auto1R.arrancarAuto()
 		game.addVisual(auto2R)
 		auto2R.arrancarAuto()
-		//game.addVisual(camion1L)
-		//camion1L.arrancarAuto()
-		//game.addVisual(camion2L)
-		//camion2L.arrancarAuto()
+			// game.addVisual(camion1L)
+			// camion1L.arrancarAuto()
+			// game.addVisual(camion2L)
+			// camion2L.arrancarAuto()
 		game.addVisual(camion3L)
 		camion3L.arrancarAuto()
 		game.addVisual(camion4L)
@@ -157,9 +153,7 @@ object start {
 		auto1L.arrancarAuto()
 		game.addVisual(auto2L)
 		auto2L.arrancarAuto()
-		
 	}
-
 
 }
 
@@ -175,6 +169,10 @@ object vidaExtra {
 		game.removeVisual(self)
 	}
 
+	method positionRandom() {
+		position = new Position(x = posX.anyOne(), y = posY.anyOne())
+	}
+
 }
 
 object rabbitWin {
@@ -187,7 +185,10 @@ object rabbitWin {
 		ganador.reproducir()
 		game.clear()
 		game.addVisual(self)
-		game.schedule(1000, { => start.inicio()}) // VA AL INICIO DEL TABLERO EN ULTIMA POSICION 
+		rabbit.gano()
+		vidaExtra.positionRandom()
+		game.schedule(4000, { => tablero.inicio()}) // VA AL INICIO DEL TABLERO EN ULTIMA POSICION 
+		//
 	}
 
 }
@@ -233,13 +234,15 @@ object rabbitGameOver {
 		gameOver.reproducir()
 		game.clear()
 		game.addVisual(self)
-		game.schedule(1000, { => tablero.inicio()}) // VA AL INICIO DEL TABLERO EN ULTIMA POSICION 
+		game.schedule(4000, { => tablero.inicio()}) // VA AL INICIO DEL TABLERO EN ULTIMA POSICION 
 		rabbit.vidas(3)
 		barraVidas.image("assets/vidas-3.png")
+		vidaExtra.positionRandom()
 	}
 
 }
 
+//
 object enter {
 
 	var property image = "assets/ENTER.png"
