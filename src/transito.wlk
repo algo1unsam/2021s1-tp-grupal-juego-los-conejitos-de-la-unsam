@@ -83,8 +83,6 @@ class AutoIzquierdaDerecha inherits Auto {
 
 class AutoDerechaIzquierda inherits Auto {
 
-	// const posX = []
-	// const posY = [1 ,2 ,3]
 	var property posicionInicial = self.dondeAparece()
 	var property position = posicionInicial
 
