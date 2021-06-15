@@ -231,6 +231,7 @@ object rabbitGameOver {
 
 	method perder() {
 		ruido.parar()
+		auch.parar()
 		gameOver.reproducir()
 		game.clear()
 		game.addVisual(self)

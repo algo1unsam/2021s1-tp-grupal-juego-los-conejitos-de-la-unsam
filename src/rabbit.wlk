@@ -60,6 +60,7 @@ object rabbit {
 
 	method perdioVida() {
 		position = new Position(x = 7, y = 0)
+		auch.reproducir()
 		barraVidas.perderVida()
 	}
 
